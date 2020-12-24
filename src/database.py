@@ -1,6 +1,4 @@
 import csv
-#from src.reminder import PoliteReminder
-#from src.deadlined_reminders import DateReminder
 from src.deadlined_reminders import DeadlinedReminder
 
 

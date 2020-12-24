@@ -1,6 +1,5 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, ABCMeta, abstractmethod
 from collections.abc import Iterable
-from abc import ABC
 from dateutil.parser import parse
 from datetime import datetime
 
@@ -39,10 +38,7 @@ class DateReminder(DeadlinedReminder):
         self.text = text
 
     def is_due(self):
-        if self.date <= datetime.now():
-            return True
-        else:
-            return False
+        return self.date <= datetime.now()
 
     def __iter__(self):
         return iter([self.text, self.date.isoformat()])
